@@ -133,7 +133,6 @@ void loop()
 void SM_Main() {
   switch (buttonState) {
     case 0: // INIT
-      initScreen();
       buttonState = 1;
       break;
     case 1: //STOPPED
@@ -276,19 +275,4 @@ void SM_LEDs() {
     digitalWrite(LED_START_PIN, HIGH);
     digitalWrite(LED_STOP_PIN, LOW);
   }
-}
-
-void clearScreen() {
-  lcd.setCursor(0, 0);
-  lcd.print("                ");
-  lcd.setCursor(0, 1);
-  lcd.print("                ");
-}
-
-void initScreen() {
-  //modbus.int16ToRegister(8601, 0);
-  lcd.setCursor(0, 0);
-  lcd.print("!!!INITIATING!!!");
-  lcd.setCursor(0, 1);
-  lcd.print("!!PRESS START!!");
 }
